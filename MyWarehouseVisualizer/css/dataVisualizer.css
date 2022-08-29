@@ -35,6 +35,9 @@
 }
 
 
+table, td, tbody, thead, tr, th {
+  border: 1px solid black;
+}
 
 /******************************************************************************
  * CSS Spinner
