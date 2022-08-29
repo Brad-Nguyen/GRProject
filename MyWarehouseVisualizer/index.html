@@ -18,11 +18,19 @@
     <meta name="rating" content="general">
     <meta charset="utf-8" />
 
-    <link rel="icon" href="http://mydatavisualizer.com/wp-content/uploads/2019/06/cropped-MyDataVisualizerLogo-1-32x32.png" sizes="32x32" />
-    <link rel="icon" href="http://mydatavisualizer.com/wp-content/uploads/2019/06/cropped-MyDataVisualizerLogo-1-192x192.png" sizes="192x192" />
-    <link rel="shortcut icon" href="http://mydatavisualizer.com/wp-content/uploads/2019/06/cropped-MyDataVisualizerLogo-1-32x32.png" sizes="32x32" />
-    <link rel="apple-touch-icon-precomposed" href="http://mydatavisualizer.com/wp-content/uploads/2019/06/cropped-MyDataVisualizerLogo-1-180x180.png" />
-    <meta name="msapplication-TileImage" content="http://mydatavisualizer.com/wp-content/uploads/2019/06/cropped-MyDataVisualizerLogo-1-270x270.png" />
+    <link rel="icon"
+        href="./img/brand.png"
+        sizes="32x32" />
+    <link rel="icon"
+        href="./img/brand.png"
+        sizes="192x192" />
+    <link rel="shortcut icon"
+        href="./img/brand.png"
+        sizes="32x32" />
+    <link rel="apple-touch-icon-precomposed"
+        href="./img/brand.png" />
+    <meta name="msapplication-TileImage"
+        content="./img/brand.png" />
 
     <!--D3 -->
     <script src="lib/d3.v5.9.2.js" charset="utf-8"></script>
@@ -35,15 +43,18 @@
     <!--jQuery-->
     <script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
 
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!--w2ui http://w2ui.com/web/ -->
     <link rel="stylesheet" type="text/css" href="css/w2ui.min.css" />
     <script src="lib/w2ui.1.5x.min.js" charset="utf-8"></script>
 
-	
     <!--ThreeJS -->
     <script src="lib/three.min.js"></script>
     <script src="lib/Detector.js"></script>
-    <script src="lib/WebGL.js"></script> <!-- https://threejs.org/docs/index.html#manual/en/introduction/WebGL-compatibility-check -->
+    <script src="lib/WebGL.js"></script>
+    <!-- https://threejs.org/docs/index.html#manual/en/introduction/WebGL-compatibility-check -->
     <script src="lib/stats.js"></script> <!-- Customized for Height -->
     <script src="lib/OrbitControls.js"></script>
 
@@ -56,13 +67,61 @@
     <script>
         //var scriptType = "Obfuscated";
         //scriptType = window.location.href.indexOf("demo") == -1 ? "" :  scriptType;	
-		var scriptType = "";
+        var scriptType = "";
         $.getScript("lib/myWarehouseVisualizer" + scriptType + ".js");
 
     </script>
 
 </head>
 
-<body></body>
+<body>
+    <header class="relative bg-cover bg-center bg-no-repeat h-[320px] capitalize text-white flex flex-col z-50" style="background-image: url('./img/background-header.png');">
+        <nav class="container mx-auto py-2">
+            <div class="flex">
+                <a href="/" class=" mr-4"><img src="./img/brand.png" alt="brand" class="icon" /></a>
+                <div class="flex justify-start flex-1 gap-4">
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded">Trang chủ</a>
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded bg-neutral-100/[0.3]">Xây dựng kho</a>
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded">Quản lí kho hàng</a>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <a href="/" class="border-1 rounded bg-green-300/25 capitalize px-4 py-2">đăng nhập</a>
+                    <a href="/" class="border-1 rounded bg-blue-500/25 capitalize px-4 py-2">đăng kí</a>
+                </div>
+            </div>
+        </nav>
+        <hr class="bg-neutral-100/25" style="background-color: red" />
+        <div class="container mx-auto flex-1 flex items-center gap-4">
+            <div class="container mx-auto flex-1 flex flex-col items-start justify-center gap-4">
+                <h1 class="text-3xl">xây dựng kho hàng</h1>
+                <div class="bread-crumb flex gap-2 aitems-center">
+                    <a class="flex items-center"><img src="./img/icon/home-icon.png"/></a>
+                    <span class="flex items-center"><img src="./img/icon/dot.png" alt=""/></span>
+                    <a href="/" style="color: rgba(181, 181, 195, 1)">xây dựng kho hàng</a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <button class="border-1 rounded capitalize px-4 py-2" style="background-color: rgba(165, 206, 54, 1);
+                ">nhập file csv</button>
+            </div>
+        </div>
+    </header>
+    <nav class="h-[72px] fixed z-40 top-0 left-0" style="background-image: url('./img/background-fixed-header.png');">
+        <div class="mx-auto py-4">
+            <div class="flex">
+                <a href="/" class=" mr-4"><img src="./img/brand.png" alt="brand" class="icon" /></a>
+                <div class="flex justify-start flex-1 gap-4">
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded">Trang chủ</a>
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded">Xây dựng kho</a>
+                    <a href="/" class="capitalize px-4 py-2 text-white hover:bg-neutral-100/25 rounded">Quản lí kho hàng</a>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <a href="/" class="border-1 rounded bg-green-300/25 capitalize px-4 py-2">đăng nhập</a>
+                    <a href="/" class="border-1 rounded bg-blue-500/25 capitalize px-4 py-2">đăng kí</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
 
 </html>
